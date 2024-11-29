@@ -1,0 +1,252 @@
+:root {
+  --primary-color: #ff6b6b;
+  --secondary-color: #4ecdc4;
+  --background-color: #f7f7f7;
+  --text-color: #333;
+  --card-background: #ffffff;
+  --navbar-color: #2c3e50;
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-image: url('../public/bg3.jpeg');
+  background-size: contain; 
+  background-position: center; 
+  background-attachment: fixed;
+  overflow: scroll;
+}
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.navbar {
+  background-color: var(--navbar-color);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.navbar-logo-text {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0px 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+.navbar-links a:hover {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    margin-top: 15px;
+  }
+
+  .navbar-links li {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 30px 0;
+}
+
+.restaurant-card {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+.restaurant-info {
+  padding: 20px;
+}
+
+.restaurant-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+  color: var(--primary-color);
+}
+
+.restaurant-info p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  padding: 1vh 1vw;
+  border-radius: 20px;
+}
+
+.star {
+  color: #a30404;
+  font-size: 1.2em;
+  margin-right: 2px;
+}
+
+.rating-text {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.restaurant-detail {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-image-large {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.restaurant-about {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 1.1em;
+}
+
+.location-search {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input, button {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+button:hover {
+  background-color: #ff5252;
+}
+
+.loaderI{
+  position: relative;
+  left: 40%;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: rgb(9, 62, 18);
+}
+
+.pagination button:hover {
+  background-color: #182524;
+}
+
+@media (max-width: 768px) {
+  .restaurant-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .restaurant-detail, .location-search {
+    padding: 20px;
+  }
+}
+
